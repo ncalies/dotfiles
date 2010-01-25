@@ -29,3 +29,5 @@ map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
 map !S :call RunSpec("")
 
 map <F2> :NERDTreeToggle<CR>
+
+au BufRead,BufNewFile *.js set ft=javascript.jquery
