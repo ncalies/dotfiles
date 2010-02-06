@@ -77,10 +77,13 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
+# Function definitions.
+# You may want to put all your functions into a separate file like
+# ~/.bash_functions, instead of adding them here directly.
+
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -101,16 +104,11 @@ fi
 #Git auto-completion & branch name
 source ~/scripts/git-completion.sh
 
-#Custom colors
-export PS1='\[\033[0;32m\]\h \[\033[1;36m\]\w\[\033[0;34m\]$(__git_ps1 " (%s)") \[\033[00m\]: '
-
-#export PATH=/opt/ruby/bin:$PATH
-export MAGLEV_HOME=/home/jesse/bin/MagLev-installer/MagLev-22624.Linux
-export PATH=$MAGLEV_HOME/bin:$PATH
-
 # Automatically run cucumber specs with autospec
 export AUTOFEATURE=true autospec
 
 export EDITOR='vim'
+
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[0;34m\]\$(parse_git_branch)\[\033[00m\]$ "
 
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then source /home/jesse/.rvm/scripts/rvm ; fi
