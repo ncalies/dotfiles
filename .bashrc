@@ -109,6 +109,6 @@ export AUTOFEATURE=true autospec
 
 export EDITOR='vim'
 
-export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[0;34m\]\$(parse_git_branch)\[\033[00m\]$ "
+export PS1="\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;36m\]\w\$(parse_git_branch)\[\e[00m\]$ "
 
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then source /home/jesse/.rvm/scripts/rvm ; fi
