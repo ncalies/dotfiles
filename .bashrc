@@ -102,7 +102,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 #Git auto-completion & branch name
-source ~/git-completion.sh
+source ~/.git-completion.sh
 
 # Automatically run cucumber specs with autospec
 export AUTOFEATURE=true autospec
