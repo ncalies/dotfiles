@@ -1,5 +1,3 @@
-
-#alias sudo="sudo env PATH=$PATH"
 alias free="free -m"
 alias update="sudo aptitude update"
 alias install="sudo aptitude install"
