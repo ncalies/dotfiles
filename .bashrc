@@ -102,13 +102,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 #Git auto-completion & branch name
-source ~/scripts/git-completion.sh
+source ~/git-completion.sh
 
 # Automatically run cucumber specs with autospec
 export AUTOFEATURE=true autospec
 
 export EDITOR='vim'
 
-export PS1="\[\e[01;32m\]\u@\h\[\e[00m\]:\[\e[01;36m\]\w\$(parse_git_branch)\[\e[00m\]$ "
+export PS1=$(parse_ps1)
 
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then source /home/jesse/.rvm/scripts/rvm ; fi

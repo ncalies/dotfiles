@@ -49,6 +49,14 @@ function parse_git_dirty {
       echo -e "$(parse_git_added)$(parse_git_deleted)$(parse_git_modified)"
 }
 function parse_git_branch {
-      local result=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/")
-      echo -e "${txtblu}($result${txtblu})"
+      if [ -n "$(__git_ps1)" ]
+      then
+        local result=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/")
+        echo -e "${txtblu}($result${txtblu})"
+      fi
+}
+
+function parse_ps1 {
+    #echo "${bldgrn}\u@\h\[\e[00m\]:\[\e[01;36m\]\w\$(parse_git_branch)\[\e[00m\]$ "
+    echo "${bldgrn}\u@\h${txtrst}:${bldcyn}\w\$(parse_git_branch)${txtrst}$ "
 }
