@@ -58,5 +58,5 @@ function parse_git_branch {
 
 function parse_ps1 {
     #echo "${bldgrn}\u@\h\[\e[00m\]:\[\e[01;36m\]\w\$(parse_git_branch)\[\e[00m\]$ "
-    echo "${bldgrn}\u@\h${txtrst}:${bldcyn}\w\$(parse_git_branch)${txtrst}$ "
+    echo "\[${bldgrn}\u@\h${txtrst}:${bldcyn}\w\$(parse_git_branch)${txtrst}$ \]"
 }
