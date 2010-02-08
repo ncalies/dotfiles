@@ -2,4 +2,4 @@
 	name = jc00ke
 	email = jesse@jc00ke.com
 [diff]
-	external = /home/jesse/scripts/git_diff_meld.py
+	external = /home/jesse/projects/scripts/git_diff_meld.py
