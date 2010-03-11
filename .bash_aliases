@@ -18,6 +18,7 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias gm="git merge"
 alias ga="git add"
+alias gco="git checkout"
 
 alias up="git push origin `parse_git_this_branch`"
 alias down="git pull origin `parse_git_this_branch`"
