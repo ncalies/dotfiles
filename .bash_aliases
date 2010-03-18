@@ -17,6 +17,7 @@ alias gca="git commit -v -a"
 alias gb="git branch"
 alias gba="git branch -a"
 alias gm="git merge"
+alias gmv="git mv"
 alias ga="git add"
 alias gco="git checkout"
 
