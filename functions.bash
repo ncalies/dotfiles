@@ -1,5 +1,5 @@
 # vim:set ft=sh sw=2 sts=2:
-
+txtwht="\[\e[00m\]"   # White
 txtred="\[\e[0;31m\]" # Red
 txtgrn="\[\e[0;32m\]" # Green
 txtpur="\[\e[0;35m\]" # Purple
