@@ -81,8 +81,8 @@ fi
 # You may want to put all your functions into a separate file like
 # ~/.bash_functions, instead of adding them here directly.
 
-if [ -f ~/.bash_functions ]; then
-    . ~/.bash_functions
+if [ -f ~/.functions.bash ]; then
+    . ~/.functions.bash
 fi
 
 # Alias definitions.
@@ -90,8 +90,8 @@ fi
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.aliases.bash ]; then
+    . ~/.aliases.bash
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -102,7 +102,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 #Git auto-completion & branch name
-source ~/.git-completion.sh
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
 
 # Automatically run cucumber specs with autospec
 export AUTOFEATURE=true autospec
