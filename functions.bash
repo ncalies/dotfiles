@@ -6,7 +6,6 @@ txtpur="\[\e[0;35m\]" # Purple
 txtblu="\[\e[0;34m\]" # Blue
 bldgrn="\[\e[1;32m\]" # Green
 bldcyn="\[\e[1;36m\]" # Cyan
-txtrst="\[\e[0m"    # Text Reset
 
 function parse_git_this_branch {
       git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
@@ -28,7 +27,6 @@ function parse_git_branch {
       git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 function parse_ps1 {
-    #echo "${txtgrn}\u@\h:${bldcyn}\w${txtrst} $(parse_git_branch)> "
     echo "${txtgrn}\u@\h${txtwht}:${bldcyn}\w${txtwht}\$(parse_git_branch)$ "
 }
 
