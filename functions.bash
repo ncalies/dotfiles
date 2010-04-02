@@ -29,7 +29,7 @@ function parse_git_branch {
 }
 function parse_ps1 {
     #echo "${txtgrn}\u@\h:${bldcyn}\w${txtrst} $(parse_git_branch)> "
-    echo "${txtgrn}\u@\h\[\033[00m\]:${bldcyn}\w\[\033[00m\]\$(parse_git_branch)$ "
+    echo "${txtgrn}\u@\h${txtwht}:${bldcyn}\w${txtwht}\$(parse_git_branch)$ "
 }
 
 export CLICOLOR=1
