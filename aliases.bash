@@ -5,7 +5,6 @@ alias upgrade="sudo aptitude safe-upgrade"
 alias remove="sudo aptitude remove"
 alias l="ls -lahF"
 alias up!="update && upgrade"
-alias ack="ack-grep"
 
 alias u="unicorn -p 4567"
 alias ur="unicorn_rails -p 3000"
