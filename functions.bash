@@ -27,7 +27,7 @@ function parse_git_branch {
       git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
 function parse_ps1 {
-    echo "${bldcyn}\w${txtwht}\$(parse_git_branch)$ "
+    echo "${bldcyn}\W${txtwht}\$(parse_git_branch)$ "
 }
 
 export CLICOLOR=1
