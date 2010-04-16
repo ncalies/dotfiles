@@ -7,7 +7,7 @@ set expandtab
 retab
 set autoindent
 set smartindent
-set autochdir
+"set autochdir
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Execute open rspec buffer
