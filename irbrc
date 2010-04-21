@@ -1,22 +1,38 @@
-#!/usr/bin/env ruby
+#require 'rubygems'
+require 'pp'
+require 'irb/completion'
+#require 'ap'
 
-require 'rubygems'
-require 'wirble'
-require 'ap'
+
+=begin
+    require 'wirble'
+    Wirble.init
+    Wirble.colorize
+rescue LoadError => e
+    warn "Cannot load wirble: #{e}"
+end
+
+begin
+    require 'boson'
+    Boson.start
+rescue LoadError => e
+    warn "Cannot load boson: #{e}"
+end
+=begin
+    require 'hirb'
+    extend Hirb::Console
+rescue LoadError => e
+    warn "Cannot load Hirb: #{e}"
+=end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
-
-require 'irb/completion'
 
 IRB.conf[:AUTO_INDENT]  = true
 
 require 'irb/ext/save-history'
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
-
-Wirble.init
-Wirble.colorize
 
 def clear
     system 'clear'
