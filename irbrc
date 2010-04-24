@@ -1,10 +1,24 @@
-#require 'rubygems'
+# print local methods
+class Object
+
+    def local_methods
+        (methods - Object.instance_methods).sort
+    end
+
+end
+
+alias q exit
+
+require 'rubygems'
 require 'pp'
 require 'irb/completion'
-#require 'ap'
+begin
+    require 'ap'
+rescue LoadError => e
+    warn "Cannot load awesome_print: #{e}"
+end
 
-
-=begin
+begin
     require 'wirble'
     Wirble.init
     Wirble.colorize
@@ -18,12 +32,13 @@ begin
 rescue LoadError => e
     warn "Cannot load boson: #{e}"
 end
-=begin
+
+begin
     require 'hirb'
     extend Hirb::Console
 rescue LoadError => e
     warn "Cannot load Hirb: #{e}"
-=end
+end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
