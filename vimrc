@@ -29,5 +29,11 @@ map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
 map !S :call RunSpec("")
 
 map <F2> :NERDTreeToggle<CR>
-
+" Kill the cursor keys when in insert mode
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Up> <NOP>
+inoremap <Down> <NOP>
+" Map for less hand movement
+inoremap kj <Esc>
 au BufRead,BufNewFile *.js set ft=javascript.jquery
