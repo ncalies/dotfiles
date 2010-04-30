@@ -27,8 +27,6 @@ alias up="git push origin `parse_git_this_branch`"
 alias down="git pull origin `parse_git_this_branch`"
 alias uph="git push heroku `parse_git_this_branch`"
 
-alias meld="~/sources/meld/bin/meld"
-
 alias gem+="sudo gem install --no-rdoc --no-ri"
 alias gem-="sudo gem uninstall"
 alias gem^="sudo gem update --no-rdoc --no-ri"
