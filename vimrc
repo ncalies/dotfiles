@@ -31,4 +31,5 @@ map !S :call RunSpec("")
 map <F2> :NERDTreeToggle<CR>
 " Map for less hand movement
 inoremap kj <Esc>
+inoremap lkj <Esc>:w<CR>
 au BufRead,BufNewFile *.js set ft=javascript.jquery
