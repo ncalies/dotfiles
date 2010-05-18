@@ -33,3 +33,11 @@ map <F2> :NERDTreeToggle<CR>
 inoremap kj <Esc>
 inoremap lkj <Esc>:w<CR>
 au BufRead,BufNewFile *.js set ft=javascript.jquery
+
+if has("autocmd")
+  " Restore cursor position
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+endif

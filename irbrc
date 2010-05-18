@@ -12,33 +12,23 @@ alias q exit
 require 'rubygems'
 require 'pp'
 require 'irb/completion'
-begin
-    require 'ap'
-rescue LoadError => e
-    warn "Cannot load awesome_print: #{e}"
+
+def load_lib(lib, &block)
+    begin
+        require lib
+        yield if block
+    rescue LoadError => e
+        warn "Cannot load #{lib}: #{e}"
+    end
 end
 
-begin
-    require 'wirble'
+%w(interactive_editor ap).each{ |l| load_lib l }
+load_lib 'wirble' do
     Wirble.init
     Wirble.colorize
-rescue LoadError => e
-    warn "Cannot load wirble: #{e}"
 end
-
-begin
-    require 'boson'
-    Boson.start
-rescue LoadError => e
-    warn "Cannot load boson: #{e}"
-end
-
-begin
-    require 'hirb'
-    extend Hirb::Console
-rescue LoadError => e
-    warn "Cannot load Hirb: #{e}"
-end
+load_lib 'boson' do Boson.start end
+load_lib 'hirb' do extend Hirb::Console end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
