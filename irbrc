@@ -13,10 +13,10 @@ require 'rubygems'
 require 'pp'
 require 'irb/completion'
 
-def load_lib(lib, &block)
+def load_lib(lib)
     begin
         require lib
-        yield if block
+        yield if block_given?
     rescue LoadError => e
         warn "Cannot load #{lib}: #{e}"
     end
