@@ -27,8 +27,9 @@ load_lib 'wirble' do
     Wirble.init
     Wirble.colorize
 end
-load_lib 'boson' do Boson.start end
-load_lib 'hirb' do extend Hirb::Console end
+load_lib 'boson'    do Boson.start end
+load_lib 'hirb'     do extend Hirb::Console end
+load_lib 'bond'     do Bond.start end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
