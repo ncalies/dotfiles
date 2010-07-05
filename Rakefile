@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'open3'
 
-ignore = ['Rakefile', 'README.md', 'gitignore', 'prompt_with_git.png', 'compiz.conf']
+ignore = ['Rakefile', 'README.md', '.gitignore', 'prompt_with_git.png', 'compiz.conf']
 
 desc "Install your dotfiles."
 task :install do
