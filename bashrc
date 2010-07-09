@@ -88,4 +88,8 @@ export AUTOFEATURE=true autospec
 export EDITOR='vim'
 export PS1=$(parse_ps1)
 
-if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then source /home/jesse/.rvm/scripts/rvm ; fi
+if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then
+    source /home/jesse/.rvm/scripts/rvm ;
+    source $rvm_path/scripts/completion ;
+fi
+
