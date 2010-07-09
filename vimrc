@@ -41,3 +41,6 @@ if has("autocmd")
     \   exe "normal! g`\"" |
     \ endif
 endif
+
+map <F3> :set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F lines=999 columns=999 <CR>
+map <F4> :set go+=m go+=T go+=l go+=L go+=r go+=R go+=b go+=F lines=20 columns=150 <CR>
