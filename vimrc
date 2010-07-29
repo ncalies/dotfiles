@@ -15,6 +15,7 @@ set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
 
+set t_Co=256
 colorscheme mustang
 
 "set autochdir
