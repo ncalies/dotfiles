@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'open3'
 
-ignore = ['Rakefile', 'README.md', '.gitignore', 'prompt_with_git.png', 'compiz.conf']
+ignore = ['Rakefile', 'README.md', '.gitignore', 'prompt_with_git.png', 'compiz.conf', 'mustang.vim']
 
 desc "Install your dotfiles."
 task :install do
@@ -44,4 +44,14 @@ desc "Reinstall your dotfiles."
 task :reinstall do
   Rake::Task['uninstall'].execute
   Rake::Task['install'].execute
+end
+
+desc "Install any color schemes"
+task :install_colors do
+    colors_path = File.join(File.expand_path("~"), ".vim", "colors")
+    unless File.directory?(colors_path)
+        puts "creating #{colors_path}"
+        Dir.mkdir(colors_path)
+    end
+    FileUtils::Verbose.ln_s(File.join(Dir.pwd, 'mustang.vim'), File.join(File.expand_path("~"), ".vim", "colors", 'mustang.vim'))
 end

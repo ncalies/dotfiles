@@ -7,6 +7,16 @@ set expandtab
 retab
 set autoindent
 set smartindent
+set cursorline
+set splitbelow
+
+set foldmethod=indent
+set foldcolumn=0
+set foldnestmax=8
+set foldlevel=3
+
+colorscheme mustang
+
 "set autochdir
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -46,5 +56,7 @@ map <F3> :set go-=m go-=T go-=l go-=L go-=r go-=R go-=b go-=F lines=999 columns=
 map <F4> :set go+=m go+=T go+=l go+=L go+=r go+=R go+=b go+=F lines=20 columns=150 <CR>
 nnoremap <Leader>T :CommandTFlush <CR>
 nnoremap <Leader>a :Ack
+nnoremap J gT
+nnoremap K gt
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
