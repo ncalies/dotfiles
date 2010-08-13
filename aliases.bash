@@ -36,6 +36,7 @@ alias rtu="rake test:units"
 alias rtf="rake test:functionals"
 alias rti="rake test:integration"
 alias rit="ruby -Itest"
+alias mac="rake db:migrate && rake db:test:clone"
 
 alias gem+="gem install --no-rdoc --no-ri"
 alias gem-="gem uninstall"
