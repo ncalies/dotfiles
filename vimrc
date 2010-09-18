@@ -14,6 +14,8 @@ set foldmethod=indent
 set foldcolumn=0
 set foldnestmax=8
 set foldlevel=3
+set nobackup
+set noswapfile
 
 set t_Co=256
 colorscheme mustang
