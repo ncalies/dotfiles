@@ -1,8 +1,6 @@
 [user]
 	name = jc00ke
 	email = jesse@jc00ke.com
-[diff]
-	external = /home/jesse/projects/scripts/git_diff_meld.py
 [format]
     pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 
@@ -22,3 +20,7 @@
     track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
     up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
     who = log --pretty="format:%an - %s"
+[diff]
+    external = git_diff_wrapper
+[pager]
+    diff =

@@ -21,8 +21,6 @@ set noswapfile
 
 set noerrorbells
 set visualbell
-
-let mapleader = '\'
 set t_Co=256
 colorscheme mustang
 
