@@ -18,6 +18,7 @@ set foldnestmax=8
 set foldlevel=3
 set nobackup
 set noswapfile
+set number
 
 set noerrorbells
 set visualbell
