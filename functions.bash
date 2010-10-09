@@ -30,6 +30,10 @@ function parse_ps1 {
     echo "${bldcyn}\W${txtwht}\$(parse_git_branch)$ "
 }
 
+function git_diff {
+  git diff --no-ext-diff -w "$@" | vim -R -
+}
+
 export CLICOLOR=1
 export LSCOLORS=gxgxcxdxbxegedabagacad
 

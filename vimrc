@@ -1,5 +1,7 @@
 call pathogen#runtime_append_all_bundles()
-filetype off
+call pathogen#helptags()
+syntax on
+
 filetype on
 set tabstop=4
 set shiftwidth=4
@@ -17,6 +19,8 @@ set foldlevel=3
 set nobackup
 set noswapfile
 
+set noerrorbells
+set visualbell
 set t_Co=256
 colorscheme mustang
 
@@ -43,8 +47,8 @@ map !S :call RunSpec("")
 
 map <F2> :NERDTreeToggle<CR>
 " Map for less hand movement
-inoremap kj <Esc>
-inoremap lkj <Esc>:w<CR>
+inoremap jj <Esc>
+inoremap kk <Esc>:w<CR>
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 
 if has("autocmd")
