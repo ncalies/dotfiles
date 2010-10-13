@@ -3,7 +3,10 @@
 	email = jesse@jc00ke.com
 [format]
     pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
-
+[push]
+    default = current
+[branch]
+    autosetuprebase = always
 [alias]
     amend = commit -v --amend
     addp = add --patch
