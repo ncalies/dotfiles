@@ -3,7 +3,10 @@
 	email = jesse@jc00ke.com
 [format]
     pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
-
+[push]
+    default = current
+[branch]
+    autosetuprebase = always
 [alias]
     amend = commit -v --amend
     addp = add --patch
@@ -21,6 +24,6 @@
     up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
     who = log --pretty="format:%an - %s"
 [diff]
-    external = git_diff_wrapper
+	external = ~/bin/git_diff_wrapper
 [pager]
     diff =

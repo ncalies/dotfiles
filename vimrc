@@ -18,6 +18,7 @@ set foldnestmax=8
 set foldlevel=3
 set nobackup
 set noswapfile
+set number
 
 set noerrorbells
 set visualbell
@@ -62,6 +63,7 @@ endif
 map <F3> :set go-=m go-=T <CR>
 map <F4> :set go+=m go+=T <CR>
 nnoremap <Leader>T :CommandTFlush <CR>
+nnoremap <Leader>t :CommandT <CR>
 nnoremap <Leader>a :Ack
 nnoremap J gT
 nnoremap K gt
