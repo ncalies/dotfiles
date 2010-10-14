@@ -65,7 +65,5 @@ map <F4> :set go+=m go+=T <CR>
 nnoremap <Leader>T :CommandTFlush <CR>
 nnoremap <Leader>t :CommandT <CR>
 nnoremap <Leader>a :Ack
-nnoremap J gT
-nnoremap K gt
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
