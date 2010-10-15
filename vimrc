@@ -47,8 +47,6 @@ map !S :call RunSpec("")
 
 map <F2> :NERDTreeToggle<CR>
 " Map for less hand movement
-inoremap jj <Esc>
-inoremap kk <Esc>:w<CR>
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 
 if has("autocmd")
@@ -61,9 +59,12 @@ endif
 
 map <F3> :set go-=m go-=T <CR>
 map <F4> :set go+=m go+=T <CR>
+inoremap jj <Esc>
+inoremap kk <Esc>:w<CR>
+nnoremap <Leader>t :CommandT <CR>
 nnoremap <Leader>T :CommandTFlush <CR>
 nnoremap <Leader>a :Ack
-nnoremap J gT
-nnoremap K gt
+nnoremap <Leader>j gT
+nnoremap <Leader>k gt
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
