@@ -23,3 +23,8 @@ fi
 if [ -f ~/.git-completion.bash ]; then
     . ~/.git-completion.bash
 fi
+
+#rake auto-completion
+if [ -f ~/.rake.bash ]; then
+    . ~/.rake.bash
+fi

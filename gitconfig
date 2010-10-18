@@ -27,3 +27,5 @@
 	external = ~/bin/git_diff_wrapper
 [pager]
     diff =
+[core]
+	excludesfile = ~/.gitignore
