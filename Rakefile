@@ -1,7 +1,8 @@
 require 'rubygems'
 require 'open3'
 
-ignore = ['Rakefile', 'README.md', '.gitignore', 'prompt_with_git.png', 'compiz.conf', 'mustang.vim', 'git_diff_wrapper']
+executables = %w(ack far gimpbox git_diff_wrapper)
+ignore = %w(Rakefile README.md .gitignore compiz.conf mustang.vim) << executables
 
 desc "Install your dotfiles."
 task :install do
@@ -56,7 +57,9 @@ task :install_colors do
     FileUtils::Verbose.ln_s(File.join(Dir.pwd, 'mustang.vim'), File.join(File.expand_path("~"), ".vim", "colors", 'mustang.vim'))
 end
 
-desc "Symlink git_diff_wrapper to ~/bin"
-task :symlink_git_diff_wrapper do
-    FileUtils::Verbose.ln_s(File.join(Dir.pwd, 'git_diff_wrapper'), File.join(File.expand_path("~"), "bin", "git_diff_wrapper"))
+desc "Symlink executables to ~/bin"
+task :symlink_executables do
+    executables.each do |file|
+        FileUtils::Verbose.ln_s(File.join(Dir.pwd, file), File.join(File.expand_path("~"), "bin", file))
+    end
 end
