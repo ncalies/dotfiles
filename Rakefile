@@ -6,7 +6,7 @@ ignore = %w(Rakefile README.md .gitignore compiz.conf mustang.vim)
 desc "Install your dotfiles."
 task :install do
   Dir.glob(File.join(Dir.pwd, '*')).each do |file|
-    unless ignore.include?(File.basename file)
+    unless ignore.include?(File.basename file) || File.fnmatch?("*.rbc", file)
       FileUtils::Verbose.ln_s(file, File.join(File.expand_path("~"), ".#{File.basename(file)}")) rescue nil
     end
   end
