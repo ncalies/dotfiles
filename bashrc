@@ -82,6 +82,8 @@ if [ -f ~/.includes.bash ]; then
     . ~/.includes.bash
 fi
 
+export PATH=$HOME/bin:$PATH
+
 # Automatically run cucumber specs with autospec
 export AUTOFEATURE=true autospec
 
