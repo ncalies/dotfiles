@@ -11,7 +11,8 @@ alias q exit
 
 require 'rubygems'
 require 'pp'
-require 'irb/completion'
+#require 'irb/completion'
+require 'ruby-debug/completion'
 
 def load_lib(lib)
     begin
@@ -29,7 +30,7 @@ load_lib 'wirble' do
 end
 load_lib 'boson'    do Boson.start end
 load_lib 'hirb'     do extend Hirb::Console end
-#load_lib 'bond'     do Bond.start end
+load_lib 'bond'     do Bond.start end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
