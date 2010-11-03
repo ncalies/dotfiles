@@ -26,8 +26,7 @@ set t_Co=256
 colorscheme mustang
 
 let mapleader=","
-"set autochdir
-autocmd BufWritePre * :%s/\s\+$//e
+"autocmd BufWritePre * :%s/\s\+$//e
 
 " Execute open rspec buffer
 " Thanks to Ian Smith-Heisters
