@@ -40,6 +40,22 @@ function! RunSpec(args)
     execute cmd
 endfunction
 
+function! Privatize()
+    let priorMethod = PriorMethodDefinition()
+    exec "normal iprivate :" . priorMethod  . "\<Esc>=="
+endfunction
+
+function! PriorMethodDefinition()
+    let lineNumber = search('def', 'bn')
+    let line       = getline(lineNumber)
+    if line == 0
+        echo "No prior method definition found"
+    endif
+    return matchlist(line, 'def \(\w\+\).*')[1]
+endfunction
+
+map <Leader>p :call Privatize()<CR>
+
 " Mappings
 " run one rspec example or describe block based on cursor position
 map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
