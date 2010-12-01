@@ -32,7 +32,7 @@ function parse_rvm_info {
     fi
 }
 function parse_ps1 {
-    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)$(parse_rvm_info)\n$> "
+    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)\$(parse_rvm_info)\n$> "
 }
 
 export CLICOLOR=1
