@@ -28,11 +28,11 @@ function parse_git_branch {
 }
 function parse_rvm_info {
     if [[ $(type rvm 2> /dev/null | head -n1) == "rvm is a function" ]] ; then
-        rvm info | grep GEM_PATH | sed -r 's/^.*\/(.*)@(.*)"$/\1:\2/'
+        rvm info | grep GEM_PATH | sed -r 's/^.*\/(.*)@(.*)"$/[\1:\2]/'
     fi
 }
 function parse_ps1 {
-    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)[$(parse_rvm_info)]\n$> "
+    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)$(parse_rvm_info)\n$> "
 }
 
 export CLICOLOR=1
