@@ -28,7 +28,9 @@ function parse_git_branch {
 }
 function parse_rvm_info {
     if [[ $(type rvm 2> /dev/null | head -n1) == "rvm is a function" ]] ; then
-        rvm info | grep GEM_PATH | sed -r 's/^.*\/(.*)@(.*)"$/[\1:\2]/'
+        theruby=$(rvm info | grep full_version: | sed -r 's/^.*"(.*) \(.*"$/\1/')
+        thegemset=$(rvm info | grep gemset: | sed -r 's/^.*\"(.*)"$/\1/')
+        echo "[${theruby}:${thegemset}]"
     fi
 }
 function parse_ps1 {
