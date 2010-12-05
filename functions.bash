@@ -28,9 +28,9 @@ function parse_git_branch {
 }
 function parse_rvm_info {
     if [[ $(type rvm 2> /dev/null | head -n1) == "rvm is a function" ]] ; then
-        theruby=$(rvm list | grep \=\> | sed -r 's/=> (.*)\s?\[.*/\1/')
+        theruby=$(echo "${RUBY_VERSION//*@/}" )
         thegemset=$(echo "${GEM_PATH//*@/}" )
-        echo "[${theruby}${thegemset}]"
+        echo "{${theruby}:${thegemset}}"
     fi
 }
 function parse_ps1 {
