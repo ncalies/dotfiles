@@ -26,8 +26,15 @@ function parse_git_dirty {
 function parse_git_branch {
       git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
 }
+function parse_rvm_info {
+    if [[ $(type rvm 2> /dev/null | head -n1) == "rvm is a function" ]] ; then
+        theruby=$(rvm list | grep \=\> | sed -r 's/=> (.*)\s?\[.*/\1/')
+        thegemset=$(echo "${GEM_PATH//*@/}" )
+        echo "[${theruby}${thegemset}]"
+    fi
+}
 function parse_ps1 {
-    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)\n$> "
+    echo "${bldcyn}[\W]${txtwht}\$(parse_git_branch)\$(parse_rvm_info)\n$> "
 }
 
 export CLICOLOR=1
