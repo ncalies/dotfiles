@@ -29,8 +29,11 @@ function parse_git_branch {
 function parse_rvm_info {
     if [[ $(type rvm 2> /dev/null | head -n1) == "rvm is a function" ]] ; then
         theruby=$(echo "${RUBY_VERSION//*@/}" )
-        thegemset=$(echo "${GEM_PATH//*@/}" )
-        echo "{${theruby}:${thegemset}}"
+        thegemset=$(rvm-prompt g)
+        if [[ $thegemset == "" ]] ; then
+            thegemset="@global"
+        fi
+        echo "{${theruby}${thegemset}}"
     fi
 }
 function parse_ps1 {
