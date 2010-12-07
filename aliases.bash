@@ -8,6 +8,7 @@ alias lv="vim -R"
 alias up!="update && upgrade"
 alias gv="gvim . &>/dev/null"
 alias gimp="gimpbox"
+alias pencil="xulrunner ~/sources/pencil/application.ini &>/dev/null &"
 
 alias u="unicorn -p 4567"
 alias ur="unicorn_rails -p 3000"
