@@ -1,8 +1,13 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+filetype off
+
+runtime! autoload/pathogen.vim
+if exists('g:loaded_pathogen')
+    call pathogen#runtime_append_all_bundles()
+    call pathogen#helptags()
+endif
 syntax on
 
-filetype on
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
