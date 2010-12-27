@@ -8,6 +8,7 @@ endif
 syntax on
 
 filetype plugin indent on
+runtime macros/matchit.vim
 set tabstop=2
 set shiftwidth=2
 set expandtab
