@@ -13,7 +13,7 @@ alias pencil="xulrunner ~/sources/pencil/application.ini &>/dev/null &"
 alias u="unicorn -p 4567"
 alias ur="unicorn_rails -p 3000"
 
-alias gst="git status"
+alias gst="git status --ignore-submodules=dirty"
 alias gd="git diff"
 alias gc="git commit -v"
 alias gca="git commit -v -a"
