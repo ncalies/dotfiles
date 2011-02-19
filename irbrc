@@ -4,6 +4,7 @@ class Object
     def local_methods
         (methods - Object.instance_methods).sort
     end
+    alias u local_methods
 
 end
 
@@ -12,7 +13,7 @@ alias q exit
 require 'rubygems'
 require 'pp'
 #require 'irb/completion'
-require 'ruby-debug/completion'
+#require 'ruby-debug/completion'
 
 def load_lib(lib)
     begin
