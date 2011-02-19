@@ -90,6 +90,9 @@ export AUTOFEATURE=true autospec
 export MAGLEV_OPTS="-d -q"
 export EDITOR='vim'
 export PS1=$(parse_ps1)
+if [ -f ~/.private_tokens ]; then
+  . ~/.private_tokens
+fi
 
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then
     source /home/jesse/.rvm/scripts/rvm ;

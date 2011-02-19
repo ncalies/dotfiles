@@ -30,3 +30,10 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
+[pivotal]
+	api-token = !echo $PIVOTAL_API_TOKEN
+	full-name = Jesse Cooke
+	only-mine = true
+[github]
+	user = jc00ke
+	token = !echo $GITHUB_TOKEN
