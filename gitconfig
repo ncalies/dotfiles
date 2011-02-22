@@ -24,7 +24,7 @@
     up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
     who = log --pretty="format:%an - %s"
 [diff]
-	external = ~/bin/git_diff_wrapper
+	tool = vimdiff
 [pager]
     diff =
 [core]
@@ -37,3 +37,5 @@
 [github]
 	user = jc00ke
 	token = !echo $GITHUB_TOKEN
+[instaweb]
+	browser = chromium
