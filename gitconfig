@@ -2,27 +2,48 @@
 	name = jc00ke
 	email = jesse@jc00ke.com
 [format]
-    pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
+  pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 [push]
-    default = current
+  default = current
 [branch]
-    autosetuprebase = always
+  autosetuprebase = always
 [alias]
-    amend = commit -v --amend
-    addp = add --patch
-    axe = !sh -c 'git log -S"$0"'
-    branches = branch -a --color -v
-    cheat = !sh -c 'cheat git | less'
-    delete = !sh -c 'git branch -d "$1" && git push "$0" :refs/heads/"$1"'
-    fold = !sh -c 'git merge --no-ff "$0" && git branch -d "$0"'
-    label = tag -a
-    pending = !git --no-pager log origin/master..master && echo
-    promote = !sh -c 'git push "$0" `git branch | grep \"^*\" | cut -d\" \" -f2`'
-    prune = !git remote | xargs -n 1 git remote prune
-    staged = diff --cached
-    track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
-    up = !sh -c 'git pull && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
-    who = log --pretty="format:%an - %s"
+  # amend to the last commit
+  amend = commit --amend -C HEAD
+  # add only part of the commit to index
+  addp = add --patch
+  # search through the log
+  axe = !sh -c 'git log -S"$0"'
+  # show all branches, even across remotes
+  branches = branch -a --color -v
+  # git cheat sheet
+  cheat = !sh -c 'cheat git | less'
+  # delete a remote branch
+  delete = !sh -c 'git push "$0" :refs/heads/"$1"'
+  # merge the branch, keeping its commits in their own branch
+  fold = merge --no-ff
+  # set a tag
+  label = tag -a
+  # show commits that haven't been pushed to the remote yet
+  pending = !git --no-pager log "$0"/HEAD..HEAD && echo
+  # push HEAD to origin HEAD
+  put = !sh -c 'git push "$0" HEAD'
+  put-force = !sh -c 'git push -f "$0" HEAD'
+  # interactive rebase
+  ri = rebase --interactive --autosquash
+  # diff the index against the previous commit
+  staged = diff --cached
+  # update all submodules
+  submodule-pull = submodule foreach "git checkout master && git pull origin master"
+  # track a remote branch
+  track = !sh -c 'git branch --track "$1" "$0"/"$1" && git checkout "$1"'
+  # remove a file from the index
+  unstage = reset HEAD --
+  # pull changes, show commits since last pull/push
+  up = !sh -c 'git pull "$0" HEAD && git log --pretty=format:\"%Cred%ae %Creset- %C(yellow)%s %Creset(%ar)\" HEAD@{1}..'
+  # update all remotes, pruning removed tracking branches
+  update-remotes = remote update --prune
+
 [diff]
 	tool = vimdiff
 [pager]
@@ -31,11 +52,11 @@
 	excludesfile = ~/.gitignore
 	autocrlf = input
 [pivotal]
-	api-token = !echo $PIVOTAL_API_TOKEN
+	api-token = !sh -c 'echo $PIVOTAL_API_TOKEN'
 	full-name = Jesse Cooke
 	only-mine = true
 [github]
 	user = jc00ke
-	token = !echo $GITHUB_TOKEN
+	token = !sh -c 'echo $GITHUB_TOKEN'
 [instaweb]
 	browser = chromium
