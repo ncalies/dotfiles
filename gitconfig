@@ -44,6 +44,16 @@
   # update all remotes, pruning removed tracking branches
   update-remotes = remote update --prune
 
+  # pass in api key to git-pivotal
+  f = !sh -c 'git feature -k `echo $PIVOTAL_API_TOKEN`'
+  # pass in api key to git-pivotal
+  b = !sh -c 'git bug -k `echo $PIVOTAL_API_TOKEN`'
+  # pass in api key to git-pivotal
+  c = !sh -c 'git chore -k `echo $PIVOTAL_API_TOKEN`'
+  # pass in api key to git-pivotal
+  fp = !sh -c 'git finish -k `echo $PIVOTAL_API_TOKEN`'
+
+
 [diff]
 	tool = vimdiff
 [pager]
