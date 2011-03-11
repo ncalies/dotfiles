@@ -51,7 +51,7 @@
   # pass in api key to git-pivotal
   c = !sh -c 'git chore -k `echo $PIVOTAL_API_TOKEN`'
   # pass in api key to git-pivotal
-  fp = !sh -c 'git finish -k `echo $PIVOTAL_API_TOKEN`'
+  finish = !sh -c 'echo "Seriously, don't do it."'
 
 
 [diff]
