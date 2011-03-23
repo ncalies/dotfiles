@@ -97,6 +97,8 @@ fi
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then
     source /home/jesse/.rvm/scripts/rvm ;
     source $rvm_path/scripts/completion ;
+    source $rvm_path/contrib/ps1_functions ;
+    ps1_set --prompt ∴
 fi
 
 fi
