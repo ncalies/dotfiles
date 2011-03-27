@@ -34,3 +34,7 @@ export CLICOLOR=1
 export LSCOLORS=gxgxcxdxbxegedabagacad
 
 export CLICOLOR LSCOLORS
+
+function gem_kill {
+  gem list | grep -e $1 | sed -r 's/(.*) \(.*$/\1/' | xargs gem uninstall
+}
