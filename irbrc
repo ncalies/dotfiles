@@ -46,9 +46,6 @@ load_lib 'wirble' do
   })
   Wirble::Colorize.colors = colors
 end
-load_lib 'boson' do
-  Boson.start
-end
 load_lib 'hirb' do
   extend Hirb::Console
 end
