@@ -29,7 +29,8 @@ set number
 set noerrorbells
 set visualbell
 set t_Co=256
-colorscheme mustang
+set background=dark
+colorscheme solarized
 
 let mapleader=","
 "autocmd BufWritePre * :%s/\s\+$//e
