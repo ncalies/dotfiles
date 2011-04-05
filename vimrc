@@ -29,7 +29,11 @@ set number
 set noerrorbells
 set visualbell
 set t_Co=256
-set background=dark
+if has('gui_running')
+  set background=dark
+else
+  set background=light
+endif
 colorscheme solarized
 
 let mapleader=","
@@ -90,5 +94,6 @@ nnoremap <Leader>t :CommandT <CR>
 nnoremap <Leader>a :Ack 
 nnoremap <Leader>j gT
 nnoremap <Leader>k gt
+nnoremap :wgaq :w <CR> :GitAdd <CR> :q <CR>
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
