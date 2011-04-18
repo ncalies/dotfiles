@@ -29,6 +29,7 @@ set number
 set noerrorbells
 set visualbell
 set t_Co=256
+let g:solarized_termcolors=256
 if has('gui_running')
   set background=dark
 else
