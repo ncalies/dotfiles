@@ -29,6 +29,7 @@ alias ga="git add"
 alias gco="git checkout"
 alias gsr="git svn rebase"
 alias gsd="git svn dcommit"
+alias gg="gitg &"
 
 alias up="git push origin `parse_git_this_branch`"
 alias down="git pull origin `parse_git_this_branch`"
