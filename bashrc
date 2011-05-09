@@ -82,11 +82,9 @@ if [ -f ~/.includes.bash ]; then
     . ~/.includes.bash
 fi
 
-export PATH=$HOME/local/node/bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
-# Automatically run cucumber specs with autospec
-export AUTOFEATURE=true autospec
-
+export RBXOPTS="-Xrbc.db"
 export MAGLEV_OPTS="-d -q"
 export EDITOR='vim'
 export PS1=$(parse_ps1)
