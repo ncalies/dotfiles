@@ -82,7 +82,7 @@ if [ -f ~/.includes.bash ]; then
     . ~/.includes.bash
 fi
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/local/node/bin:$PATH
 
 export RBXOPTS="-Xrbc.db"
 export MAGLEV_OPTS="-d -q"
