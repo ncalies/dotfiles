@@ -35,6 +35,8 @@ alias up="git push origin `parse_git_this_branch`"
 alias down="git pull origin `parse_git_this_branch`"
 alias uph="git push heroku `parse_git_this_branch`"
 
+alias rbx+="rvm install rbx"
+alias hydra+="rvm install --branch hydra rbx-nhydra"
 alias r="rails"
 alias rs="r s"
 alias rg="r g"
