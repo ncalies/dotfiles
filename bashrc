@@ -88,8 +88,8 @@ export RBXOPTS="-Xrbc.db"
 export MAGLEV_OPTS="-d -q"
 export EDITOR='vim'
 export PS1=$(parse_ps1)
-if [ -f ~/.private_tokens ]; then
-  . ~/.private_tokens
+if [ -f ~/.ssh/private_tokens ]; then
+  . ~/.ssh/private_tokens
 fi
 
 if [[ -s /home/jesse/.rvm/scripts/rvm ]] ; then
