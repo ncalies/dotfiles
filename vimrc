@@ -31,6 +31,9 @@ set visualbell
 set t_Co=256
 let g:solarized_termcolors=256
 set background=dark
+if &diff
+  set background=light
+endif
 colorscheme solarized
 
 let mapleader=","
