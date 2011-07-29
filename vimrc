@@ -76,6 +76,7 @@ map !S :call RunSpec("")
 map <F2> :NERDTreeToggle<CR>
 " Map for less hand movement
 au BufRead,BufNewFile *.js set ft=javascript.jquery
+au BufRead,BufNewFile *.rabl setf ruby
 
 if has("autocmd")
   " Restore cursor position
