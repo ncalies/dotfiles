@@ -33,7 +33,7 @@ caption splitonly
 hardstatus alwayslastline
 hardstatus string "%{kbW}%-w%{.rW}%n %t%{-}%+w %=%{kbW} %H %m/%d %0c:%s"
 
-term xterm-256color
+term screen-256color
 termcapinfo xterm*|rxvt*|kterm*|Eterm* ti@:te@
 altscreen on
 encoding UTF-8
