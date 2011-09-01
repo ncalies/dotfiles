@@ -4,10 +4,6 @@ startup_message off
 shelltitle ''
 shell /bin/bash
 
-# because we like C-a is useful as 'goto beginning of line'
-# instead we use C-z to enter commands
-escape ^Zz
-
 # remove some stupid/dangerous key bindings
 bind k
 bind ^k
