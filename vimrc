@@ -30,6 +30,8 @@ set noerrorbells
 set visualbell
 set t_Co=256
 let g:solarized_termcolors=256
+let g:indent_guides_guide_size=1
+
 set background=dark
 if &diff
   set background=light
@@ -66,6 +68,7 @@ function! PriorMethodDefinition()
 endfunction
 
 map <Leader>p :call Privatize()<CR>
+map <F9> :IndentGuidesToggle<CR>
 
 " Mappings
 " run one rspec example or describe block based on cursor position
@@ -77,6 +80,8 @@ map <F2> :NERDTreeToggle<CR>
 " Map for less hand movement
 au BufRead,BufNewFile *.js set ft=javascript.jquery
 au BufRead,BufNewFile *.rabl setf ruby
+au BufRead,BufNewFile Guardfile setf ruby
+au BufRead,BufNewFile *.ejs setf html
 
 if has("autocmd")
   " Restore cursor position
