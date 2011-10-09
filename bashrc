@@ -84,7 +84,6 @@ fi
 
 export PATH=$HOME/bin:$HOME/local/node/bin:$PATH
 
-export RBXOPTS="-Xrbc.db"
 export MAGLEV_OPTS="-d -q"
 export EDITOR='vim'
 export PS1=$(parse_ps1)
