@@ -33,6 +33,7 @@ alias conflicts="git ls-files --unmerged | cut -f2 | uniq"
 alias up="git push origin `parse_git_this_branch`"
 alias down="git pull origin `parse_git_this_branch`"
 alias uph="git push heroku `parse_git_this_branch`"
+alias downh="git pull heroku `parse_git_this_branch`"
 
 alias rbx+="rvm install rbx"
 alias r="rails"
