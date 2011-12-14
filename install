@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=(ackrc aliases.bash bash_logout bashrc functions.bash gemrc git-completion.bash gitconfig gitignore gitk includes.bash irbrc profile rake.bash rdebugc screenrc vimrc)
+files=(ackrc aliases.bash bash_login bash_logout bashrc functions.bash gemrc git-completion.bash gitconfig gitignore gitk includes.bash irbrc profile rake.bash rdebugc screenrc vimrc)
 C=`pwd`
 
 for f in ${files[*]}
