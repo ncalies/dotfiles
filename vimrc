@@ -36,6 +36,10 @@ let g:indent_guides_guide_size=1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
 
+let g:gist_clip_command='xclip -selection clipboard'
+let g:gist_detect_filetype=1
+let g:github_token=$GITHUB_TOKEN
+
 set background=dark
 if &diff
   set background=light
