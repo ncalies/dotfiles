@@ -35,7 +35,7 @@ alias down="git pull origin `parse_git_this_branch`"
 alias uph="git push heroku `parse_git_this_branch`"
 alias downh="git pull heroku `parse_git_this_branch`"
 
-alias rbx^="rvm reinstall rbx -- --enable-version=1.9,1.8 --default-version=1.9"
+alias rbx^="rvm reinstall rbx -- --enable-version=1.8 --default-version=1.9"
 alias rbxci="bin/mspec tag --list fails :ci_files -tx19"
 alias cdrbx="cd ~/projects/rubinius/rubinius"
 alias r="rails"

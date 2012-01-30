@@ -49,9 +49,9 @@ end
 load_lib 'hirb' do
   extend Hirb::Console
 end
-load_lib 'bond' do
-  Bond.start
-end
+#load_lib 'bond' do
+  #Bond.start
+#end
 
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
