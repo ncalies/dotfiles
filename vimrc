@@ -107,5 +107,6 @@ nnoremap <Leader>a :Ack
 nnoremap <Leader>j gT
 nnoremap <Leader>k gt
 nnoremap :wgaq :w <CR> :GitAdd <CR> :q <CR>
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
