@@ -99,3 +99,5 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
 fi
 
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
