@@ -27,7 +27,7 @@ alias ga="git add"
 alias gco="git checkout"
 alias gsr="git svn rebase"
 alias gsd="git svn dcommit"
-alias gg="gitg &"
+alias gg="git log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color"
 alias conflicts="git ls-files --unmerged | cut -f2 | uniq"
 
 alias up="git push origin `parse_git_this_branch`"
