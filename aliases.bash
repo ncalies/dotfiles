@@ -10,6 +10,7 @@ alias gv="gvim . &>/dev/null"
 alias ..="cd .."
 alias ...="cd ../.."
 alias cdr="cd .. && cd -"
+alias xclipx="xclip -selection clipboard"
 
 alias u="unicorn -p 5000"
 alias ur="unicorn_rails -p 3000"
@@ -54,3 +55,8 @@ alias gem+="gem install --no-rdoc --no-ri"
 alias gem-="gem uninstall"
 alias gem^="gem update --no-rdoc --no-ri"
 alias gem^!="gem update --system"
+
+alias android-connect="mtpfs -o allow_other /media/GalaxyNexus"
+alias android-disconnect="fusermount -u /media/GalaxyNexus"
+
+alias cdp="cd ~/projects/clients/watsi/platform"
