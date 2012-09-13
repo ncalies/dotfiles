@@ -149,7 +149,7 @@ map <F3> :set go-=m go-=T <CR>
 map <F4> :set go+=m go+=T <CR>
 inoremap jj <Esc>
 inoremap kk <Esc>:w<CR>
-nnoremap <Leader>a :Ack 
+nnoremap <Leader>a :Ack
 nnoremap <Leader>j gT
 nnoremap <Leader>k gt
 nnoremap :wgaq :w <CR> :GitAdd <CR> :q <CR>
