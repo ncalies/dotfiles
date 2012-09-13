@@ -93,7 +93,7 @@ endif
 colorscheme solarized
 
 let mapleader=","
-"autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Execute open rspec buffer
 " Thanks to Ian Smith-Heisters
