@@ -61,6 +61,8 @@ set autoindent
 set smartindent
 set cursorline
 set splitbelow
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
 
 set foldmethod=indent
 set foldcolumn=0
@@ -152,5 +154,3 @@ nnoremap <Leader>j gT
 nnoremap <Leader>k gt
 nnoremap :wgaq :w <CR> :GitAdd <CR> :q <CR>
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-set statusline=%<%f\ %y%#ErrorMsg#%m%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%*%r%{exists('*rails#statusline')?rails#statusline():''}%{exists('*fugitive#statusline')?fugitive#statusline():''}%=%-14.(%l,%c%V%)\ %P
