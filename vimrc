@@ -1,10 +1,54 @@
+set nocompatible
 filetype off
 
-runtime! autoload/pathogen.vim
-if exists('g:loaded_pathogen')
-    call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
-endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-rake'
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/syntastic"
+Bundle "jc00ke/nerdcommenter"
+Bundle "msanders/snipmate.vim"
+Bundle "vim-ruby/vim-ruby"
+Bundle "jc00ke/taglist.vim"
+Bundle "jc00ke/vim-tomdoc"
+Bundle "mileszs/ack.vim"
+Bundle "tsaleh/vim-supertab"
+Bundle "tsaleh/vim-align"
+Bundle "tsaleh/vim-matchit"
+Bundle "kana/vim-textobj-user"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "michaeljsmith/vim-indent-object"
+Bundle "motemen/git-vim"
+Bundle "adamlowe/vim-slurper"
+Bundle "kchmck/vim-coffee-script"
+Bundle "int3/vim-extradite"
+Bundle "altercation/vim-colors-solarized"
+Bundle "juvenn/mustache.vim"
+Bundle "kien/ctrlp.vim"
+Bundle "nathanaelkane/vim-indent-guides"
+Bundle "bbommarito/vim-slim"
+Bundle "mattn/gist-vim"
+Bundle "benmills/vimux"
+Bundle "jgdavey/vim-blockle"
+Bundle "Lokaltog/vim-powerline"
+Bundle "jQuery"
 syntax on
 
 filetype plugin indent on
