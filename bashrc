@@ -82,7 +82,8 @@ if [ -f ~/.includes.bash ]; then
     . ~/.includes.bash
 fi
 
-export PATH=$HOME/projects/maglev/bin:$HOME/projects/dotjs-ubuntu/bin:$HOME/bin:$HOME/local/node/bin:$PATH
+export MAGLEV_HOME=$HOME/projects/maglev
+export PATH=$HOME/projects/dotjs-ubuntu/bin:$HOME/bin:$HOME/local/node/bin:$PATH
 
 export MAGLEV_OPTS="-q"
 export EDITOR='vim'
