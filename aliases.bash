@@ -11,6 +11,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias cdr="cd .. && cd -"
 alias xclipx="xclip -selection clipboard"
+alias tmux="TERM=screen-256color-bce tmux"
 alias wemux="TERM=screen-256color-bce wemux"
 
 alias u="unicorn -p 5000"
