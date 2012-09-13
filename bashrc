@@ -91,6 +91,12 @@ if [ -f ~/.ssh/private_tokens ]; then
   . ~/.ssh/private_tokens
 fi
 
+if [ -f ~/sources/todo.txt_cli/todo_completion ]; then
+  source ~/sources/todo.txt_cli/todo_completion
+  alias t="todo.sh"
+  complete -F _todo t
+fi
+
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
     source "$HOME/.rvm/scripts/rvm" ;
     source "$rvm_path/scripts/completion" ;
