@@ -24,13 +24,7 @@ def load_lib(lib)
     require lib
     yield if block_given?
   rescue LoadError => e
-    warn "Cannot load #{lib}: #{e}"
-    puts "Do you want to install #{gem}? [y/n]"
-    if gets.chomp =~ /y/i
-      %x{gem install #{gem} --no-rdoc --no-ri}
-      Gem.refresh
-      retry
-    end
+    # It ain't installed
   end
 end
 
