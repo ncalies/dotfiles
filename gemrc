@@ -3,7 +3,7 @@
 gemcutter_key: 9ddf9f911d1da36604dd2ce43c88bb78
 :verbose: true
 :backtrace: false
-gem: --no-rdoc --no-ri
+gem: --no-rdoc
 :update_sources: true
 :sources:
 - http://gemcutter.org
