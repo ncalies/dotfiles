@@ -1,6 +1,6 @@
 [user]
-	name = jc00ke
-	email = jesse@jc00ke.com
+	name = ncalies
+	email = ncalies@gmail.com
 [format]
   pretty="format:%C(yellow)%h%Creset %C(magenta bold)%aN%Creset%C(blue) %ad%Creset %s"
 [push]
@@ -61,13 +61,6 @@
 [core]
 	excludesfile = ~/.gitignore
 	autocrlf = input
-[pivotal]
-	api-token = !sh -c 'echo $PIVOTAL_API_TOKEN'
-	full-name = Jesse Cooke
-	only-mine = true
-[github]
-	user = jc00ke
-	token = !sh -c 'echo $GITHUB_TOKEN'
 [instaweb]
 	browser = chromium
 [color]
