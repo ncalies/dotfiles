@@ -3,18 +3,18 @@
 # for examples
 
 # If not running interactively, don't do anything
-if [[ -n "$PS1" ]] ; then
+[ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
-# don't overwrite GNU Midnight Commander's setting of `ignorespace'.
-HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoredups:ignorespace
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -40,12 +40,12 @@ esac
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-      # We have color support; assume it's compliant with Ecma-48
-      # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-      # a case would tend to support setf rather than setaf.)
-      color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-      color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -70,47 +70,43 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
+    #alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
 
-# Includes
-if [ -f ~/.includes.bash ]; then
-    . ~/.includes.bash
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
-export MAGLEV_HOME=$HOME/projects/maglev
-export PATH=$HOME/projects/dotjs-ubuntu/bin:$HOME/bin:$HOME/local/node/bin:$PATH
-
-export MAGLEV_OPTS="-q"
-export EDITOR='vim'
-export PS1=$(parse_ps1)
-if [ -f ~/.ssh/private_tokens ]; then
-  . ~/.ssh/private_tokens
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
 fi
 
-if [ -f ~/sources/todo.txt_cli/todo_completion ]; then
-  source ~/sources/todo.txt_cli/todo_completion
-  alias t="todo.sh"
-  complete -F _todo t
+if [[ -s "$rvm_path/scripts/rvm" ]] ; then
+  source "$rvm_path/scripts/rvm" ;
+  source "$rvm_path/scripts/completion" ;
+  source "$rvm_path/contrib/ps1_functions" ;
+  ps1_set --prompt ∴
 fi
-
-if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then
-    source "$HOME/.rvm/scripts/rvm" ;
-    source "$rvm_path/scripts/completion" ;
-    source "$rvm_path/contrib/ps1_functions" ;
-    ps1_set --prompt ∴
-fi
-
-fi
-
-hitch() {
-  command hitch "$@"
-  if [[ -s "$HOME/.hitch_export_authors" ]] ; then source "$HOME/.hitch_export_authors" ; fi
-}
-alias unhitch='hitch -u'
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
